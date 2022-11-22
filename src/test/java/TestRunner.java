@@ -3,6 +3,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/features/modules/product/UpdateProduct.feature")
+@CucumberOptions(features = "src/test/resources/features/modules/public/Login.feature")
 public class TestRunner {
 }

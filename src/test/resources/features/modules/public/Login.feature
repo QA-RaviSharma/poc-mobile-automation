@@ -28,6 +28,7 @@ Feature: Allow user to login on marketcube system
     When User enters valid details in email and password fields
       | email   | password   |
       | <email> | <password> |
+    And User clicks on login button on marketcube login page
     Then User should not be login in marketcube successfully and get validation messages
       | Password is required.           |
       | Email is required.              |
@@ -47,23 +48,23 @@ Feature: Allow user to login on marketcube system
       | Incorrect credentials provided. |
 
     Examples:
-      | email                           | password              |
-      | abc@domain.com                  | empty                 |
-      | empty                           | pass@1234             |
-      | .test@domain.com                | pass@1234             |
-      | abc\abc@domain.com              | pass@1234             |
-      | abc”test”email@domain.com       | pass@1234             |
-      | a”b(c)d,e:f;gi[j\k]l@domain.com | pass@1234             |
-      | A@b@c@domain.com                | pass@1234             |
-      | abc-@domain.com                 | pass@1234             |
-      | abc#def@domain.com              | pass@1234             |
-      | domain.com                      | pass@1234             |
-      | test@domain..com                | pass@1234             |
-      | abc.def@domain.c                | pass@1234             |
-      | abc.def@domain#archive.com      | pass@1234             |
-      | abc.def@domain                  | pass@1234             |
-      | abc.def@domain..com             | pass@1234             |
-      | userValidEmailId                | diffUserValidPassword |
+      | email                           | password  |
+      | abc@domain.com                  |           |
+      |                                 | pass@1234 |
+      | .test@domain.com                | pass@1234 |
+      | abc\abc@domain.com              | pass@1234 |
+      | abc”test”email@domain.com       | pass@1234 |
+      | a”b(c)d,e:f;gi[j\k]l@domain.com | pass@1234 |
+      | A@b@c@domain.com                | pass@1234 |
+      | abc-@domain.com                 | pass@1234 |
+      | abc#def@domain.com              | pass@1234 |
+      | domain.com                      | pass@1234 |
+      | test@domain..com                | pass@1234 |
+      | abc.def@domain.c                | pass@1234 |
+      | abc.def@domain#archive.com      | pass@1234 |
+      | abc.def@domain                  | pass@1234 |
+      | abc.def@domain..com             | pass@1234 |
+      | test.blackfox@gmail.com         | wxyz@1234 |
 
   Scenario: One liner scenario for login as operator into marketcube system with valid details
     When User logins in marketcube successfully as operator and able to see the home page

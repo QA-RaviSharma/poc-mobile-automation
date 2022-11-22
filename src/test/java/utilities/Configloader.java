@@ -15,7 +15,7 @@ public class Configloader {
     public static Properties property() {
         try {
             Properties properties = new Properties();
-            FileInputStream fileInputStream = new FileInputStream("/Users/ravis/Documents/Ravi Kumar Sharma QA/Successive.Tech/MarketCube Project/New API Automation Repo/mobile.automation.experiments/src/test/resources/config/configuration.properties");
+            FileInputStream fileInputStream = new FileInputStream("/Users/ravis/Documents/Ravi Sharma QA/Successive.Tech/MarketCube Project/API Automation/poc-mobile-automation/src/test/resources/config/configuration.properties");
             properties.load(fileInputStream);
             return properties;
         } catch (Exception e) {
@@ -27,7 +27,7 @@ public class Configloader {
 
     //Setup native apps installing
     public static String getCustomAppPath(String appName) {
-        File directoryPath = new File("src/test/resource/apps");
+        File directoryPath = new File("src/test/resources/apps");
         File path = new File(directoryPath, appName);
         log.info("APK Data: {}", path);
         return path.getAbsolutePath();
